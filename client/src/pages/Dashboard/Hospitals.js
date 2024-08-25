@@ -10,7 +10,7 @@ const Hospitals = () => {
   // Find hospital records
   const getHospitals = async () => {
     try {
-      const response = await API.get("http://localhost:5001/api/v1/inventory/get-hospitals");
+      const response = await API.get(" /api/v1/inventory/get-hospitals");
       console.log(response.data); 
       if (response.data?.success) {
         setData(response.data?.hospitals);

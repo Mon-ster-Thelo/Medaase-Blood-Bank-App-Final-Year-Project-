@@ -17,7 +17,7 @@ const HomePage = () => {
     //get function
     const getBloodRecords = async() => {
       try {
-        const {data} = await API.get("http://localhost:5001/api/v1/inventory/get-inventory");
+        const {data} = await API.get(" /api/v1/inventory/get-inventory");
         if(data?.success){
           setData(data?.inventory);
           // console.log(data);

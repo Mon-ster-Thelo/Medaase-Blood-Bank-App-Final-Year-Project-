@@ -9,7 +9,7 @@ const Donor = () => {
     //find donor records
     const getDonors = async () => {
         try {
-            const {data} = await API.get('http://localhost:5001/api/v1/inventory/get-donors');
+            const {data} = await API.get(' /api/v1/inventory/get-donors');
             //console.log(data);
             if(data?.success){
                 setData(data?.donors)
