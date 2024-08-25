@@ -11,7 +11,7 @@ const DonorList = () => {
         //find donor records
         const getDonors = async () => {
             try {
-                const {data} = await API.get(' /api/v1/admin/donor-list');
+                const {data} = await API.get('http://localhost:5001/api/v1/admin/donor-list');
                 
 
                 console.log(data);
@@ -35,7 +35,7 @@ const DonorList = () => {
                     "sure"
                 );
                 if (!answer) return;
-                const { data } = await API.delete(` /api/v1/admin/delete-donor/${id}`);
+                const { data } = await API.delete(`http://localhost:5001/api/v1/admin/delete-donor/${id}`);
                 alert(data?.message);
                 window.location.reload();
             }   catch (error) {

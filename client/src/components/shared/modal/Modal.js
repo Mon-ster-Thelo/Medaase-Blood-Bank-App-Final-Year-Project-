@@ -23,7 +23,7 @@ const Modal = () => {
 
       // setIsLoading(true);
       // need-fix
-      const { data } = await API.post(" /api/v1/inventory/create-inventory", {
+      const { data } = await API.post("http://localhost:5001/api/v1/inventory/create-inventory", {
 
         email,
         organisation: user?._id,
