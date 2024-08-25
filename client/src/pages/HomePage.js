@@ -51,31 +51,6 @@ const HomePage = () => {
                    Add Inventory
                  </h4> 
                  }
-                  {/* <table className="table">
-                    <thead>
-                      <tr>
-                        <th scope="col">Blood Group</th>
-                        <th scope="col">Inventory</th>
-                        <th scope="col">Quantity</th>
-                        <th scope="col">Donor Email</th>
-                        <th scope="col">Time & Date</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      {data?.map((record) =>(
-                        <tr key={record._id}>
-                          <td>{record.bloodGroup}</td>
-                          <td>{record.inventoryType}</td>
-                          <td>{record.quantity} (ML)</td>
-                          <td>{record.email}</td>
-                          <td>
-                            {moment(record.createdAt).format("DD/MM/YYYY hh:mm A")}
-                          </td>
-                        </tr>
-                      ))}
- 
-                    </tbody>
-                  </table> */}
                   <Modal/> 
                   </div>
                   <Analytics/>

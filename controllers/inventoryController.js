@@ -204,22 +204,15 @@ const createInventoryController = async (req, res) => {
     const getHospitalsController = async (req, res) => {
         try {
             const organisation = req.body.userId;
-            //GET HOSPITAL ID
-            const hospitalId = await inventoryModel.distinct("hospital",{
-                organisation,
-            })
-            //FIND HOSPITAL
-            const hospitals = await userModel.find({
-                _id:{ $in: hospitalId },
+            const hospitalId = await inventoryModel.distinct("hospital", { organisation });
+            const hospitals = await userModel.find({ _id: { $in: hospitalId } });
     
-            });
             return res.status(200).send({
-                success:true,
-                messages: "Hospital Data Fetched Successfully",
+                success: true,
+                message: "Hospital Data Fetched Successfully",
                 hospitals,
-
             });
-        }   catch (error) {
+        } catch (error) {
             console.log(error);
             return res.status(500).send({
                 success: false,
@@ -228,31 +221,7 @@ const createInventoryController = async (req, res) => {
             });
         }
     };
-
-    // GET ORG PROFILES
-    const getOrganisationController = async (req, res) => {
-        try {
-          const donar = req.body.userId;
-          const orgId = await inventoryModel.distinct("organisation", { donar });
-          //find org
-          const organisations = await userModel.find({
-          _id: { $in: orgId },
-        });
-        return res.status(200).send({
-          success: true,
-          message: "Organisation Data Fetched Successfully",
-          organisations,
-        });
-    } catch (error) {
-      console.log(error);
-      return res.status(500).send({
-        success: false,
-        message: "Error In Fetching Organisation Data",
-        error,
-      });
-    }
-  };
-
+    
     // GET ORG FOR HOSPITAL
     const getOrganisationforHospitalsController = async ( req,res) => {
         try {
